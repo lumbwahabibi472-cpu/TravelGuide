@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destination Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f4f7f6;
+        }
+
+        h1, h2 {
+            color: #174c3c;
+        }
+
+        form, .destination-card {
+            background: white;
+            padding: 18px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        input, textarea, button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background: #176b50;
+            color: white;
+        }
+
+        button.delete {
+            background: #b52b36;
+        }
+
+        button.cancel {
+            background: #666;
+        }
+
+        .destination-card {
+            border-left: 5px solid #176b50;
+        }
+
+        #status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Travel Destination Guide</h1>
+    <p>Discover destinations and manage your travel ideas.</p>
+
+    <h2 id="formTitle">Add a Destination</h2>
+
+    <form id="destinationForm">
+        <input type="text" id="destination" placeholder="Destination name" required>
+        <input type="text" id="country" placeholder="Country" required>
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="text" id="bestTime" placeholder="Best time to visit">
+        <input type="number" id="budget" placeholder="Estimated budget" min="0" step="0.01">
+
+        <button type="submit" id="saveButton">Save Destination</button>
+        <button type="button" id="cancelButton" class="cancel" hidden>
+            Cancel Edit
+        </button>
+    </form>
+
+    <p id="status" role="status"></p>
+
+    <h2>Available Destinations</h2>
+    <div id="destinationList">Loading destinations...</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
