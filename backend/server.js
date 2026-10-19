@@ -20,7 +20,6 @@ app.use(express.json());
 // DELETE OR REPLACE THIS:
 // app.get('/', (req, res) => {
 //     res.json({ message: 'Travel Destination Guide API is running!' });
-// });
 
 // ADD THIS INSTEAD:
 app.use(express.static(path.join(__dirname, '../frontend')));
